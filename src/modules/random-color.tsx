@@ -53,18 +53,17 @@ declareModule(
                         operation.newArts(artInProcess);
 
                         registerAdditionalSubscription(
-                            touch.frames.subscribe(
+                            touch.frames.subscribe({
                                 // TODO: There should be some predetermined order which subscriber (freehand,move,...) to call first which second... and it should be determined by module priority NOT installation (subscription) order
-                                (touchFrame) => {
+                                next(touchFrame) {
                                     touchFrame.position = collSpace.pickPoint(touchFrame.position).point;
                                     artInProcess.frames.push(touchFrame);
                                     operation.update(artInProcess);
                                 },
-                                () => {},
-                                () => {
+                                complete() {
                                     operation.persist();
                                 },
-                            ),
+                            }),
                         );
                     }),
                 );
@@ -76,11 +75,11 @@ declareModule(
 /**
  * TODO: There is a strange warning:
  *
-  ERROR  Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-      [x]  1. You might have mismatching versions of React and the renderer (such as React DOM)
-      [ ]  2. You might be breaking the Rules of Hooks
-      [ ]  3. You might have more than one copy of React in the same app
-      [ ]  See https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.
+ * ERROR  Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+ *     [x]  1. You might have mismatching versions of React and the renderer (such as React DOM)
+ *     [ ]  2. You might be breaking the Rules of Hooks
+ *   ->[ ]  3. You might have more than one copy of React in the same app
+ *     [ ]  See https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.
  *
  *
  */
