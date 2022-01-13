@@ -1,9 +1,9 @@
 import { declareModule } from '@collboard/modules-sdk';
 import { contributors, description, license, repository, version } from '../../package.json';
-import { makeEmojisToolModule } from '../makers/makeRandomTextToolModule';
+import { makeRandomTextToolModule } from '../makers/makeRandomTextToolModule';
 
 declareModule(
-    makeEmojisToolModule({
+    makeRandomTextToolModule({
         manifest: {
             name: '@hejny/random-animal-emoji',
             deprecatedNames: ['AnimalsEmojis'],
@@ -18,7 +18,7 @@ declareModule(
         },
         fontSizeRange: { min: 50, max: 100 },
         placeFrequency: 0,
-        emojis: [
+        items: [
             '🙈',
             '🙉',
             '🙊',

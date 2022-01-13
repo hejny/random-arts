@@ -1,82 +1,34 @@
-import {
-    IModuleDefinition,
-    IModuleManifest,
-    makeIconModuleOnModule,
-    randomItem,
-    TextArt,
-    ToolbarName,
-} from '@collboard/modules-sdk';
-import { Registration } from 'destroyable';
+import { IArrayable, IModuleDefinition, IModuleManifest, randomItem, TextArt, toArray } from '@collboard/modules-sdk';
 import { Vector } from 'xyzt';
+import { makeRandomItemToolModule } from './makeRandomItemToolModule';
 
-// TODO: DRY !!!
 export function makeRandomTextToolModule(protoModule: {
     manifest: IModuleManifest;
     fontSizeRange: { min: number; max: number } /* TODO: Interface for range */;
     placeFrequency: number;
     items: IArrayable<string>;
 }): IModuleDefinition {
-    const { manifest, fontSizeRange, placeFrequency, emojis } = protoModule;
+    const { fontSizeRange, items } = protoModule;
 
-    return makeIconModuleOnModule({
-        // TODO: Maybe help with the manifest
-        manifest,
-        toolbar: ToolbarName.Tools,
-        icon: {
-            order: 10,
+    return makeRandomItemToolModule({
+        ...protoModule,
 
-            char: manifest.icon,
-            boardCursor: 'crosshair',
-        },
-        moduleActivatedByIcon: {
-            async setup(systems) {
-                const { touchController, collSpace, materialArtVersioningSystem } = await systems.request(
-                    'touchController',
-                    'collSpace',
-                    'materialArtVersioningSystem',
-                );
-                return Registration.fromSubscription((registerAdditionalSubscription) =>
-                    touchController.touches.subscribe({
-                        next: (touch) => {
-                            const operation = materialArtVersioningSystem.createPrimaryOperation();
+        getRandomArt(pointOnBoard: Vector) {
+            const fontSize = Math.random() * (fontSizeRange.max - fontSizeRange.min) + fontSizeRange.min;
 
-                            const drawEmoji = (position: Vector) => {
-                                // TODO: Instead of drawEmoji function there should be inficator in touch.frames.subscribe that it is forst frame (some frame index on the object TouchFrame)
+            const art = new TextArt(
+                randomItem(...toArray(items)),
+                'red' /* TODO: Better */,
+                fontSize,
+                false,
+                false,
+                false,
+                'none',
+                new Vector(fontSize * (2 / 3), fontSize * (2 / 3)),
+            );
+            art.shift = pointOnBoard.subtract(new Vector(fontSize * (2 / 3), fontSize * (2 / 3)));
 
-                                const fontSize =
-                                    Math.random() * (fontSizeRange.max - fontSizeRange.min) + fontSizeRange.min;
-
-                                const art = new TextArt(
-                                    randomItem(...emojis),
-                                    'red' /* TODO: Better */,
-                                    fontSize,
-                                    false,
-                                    false,
-                                    false,
-                                    'none',
-                                    Vector.zero(),
-                                );
-                                art.shift = collSpace.pickPoint(
-                                    position.subtract(new Vector(fontSize * (2 / 3), fontSize * (2 / 3))),
-                                ).point;
-
-                                operation.newArts(art).persist();
-                            };
-
-                            drawEmoji(Vector.fromObject(touch.firstFrame.position));
-
-                            registerAdditionalSubscription(
-                                touch.frames.subscribe({
-                                    next: (touchFrame) => {
-                                        if (Math.random() > placeFrequency) return;
-                                        drawEmoji(Vector.fromObject(touchFrame.position));
-                                    },
-                                }),
-                            );
-                        },
-                    }),
-                );
-            },
+            return art;
         },
     });
 }

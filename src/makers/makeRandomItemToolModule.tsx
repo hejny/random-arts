@@ -1,22 +1,20 @@
 import {
+    AbstractArt,
     IModuleDefinition,
     IModuleManifest,
     makeIconModuleOnModule,
-    randomItem,
-    TextArt,
     ToolbarName,
 } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
+import { Promisable } from 'type-fest';
 import { Vector } from 'xyzt';
 
-// TODO: DRY !!!
 export function makeRandomItemToolModule(protoModule: {
     manifest: IModuleManifest;
-    fontSizeRange: { min: number; max: number } /* TODO: Interface for range */;
     placeFrequency: number;
-    getRandomIteem(): Promisable<AbstractArt>;
+    getRandomArt(pointOnBoard: Vector): Promisable<AbstractArt>;
 }): IModuleDefinition {
-    const { manifest, fontSizeRange, placeFrequency, emojis } = protoModule;
+    const { manifest, placeFrequency, getRandomArt } = protoModule;
 
     return makeIconModuleOnModule({
         // TODO: Maybe help with the manifest
@@ -37,39 +35,22 @@ export function makeRandomItemToolModule(protoModule: {
                 );
                 return Registration.fromSubscription((registerAdditionalSubscription) =>
                     touchController.touches.subscribe({
-                        next: (touch) => {
+                        next(touch) {
                             const operation = materialArtVersioningSystem.createPrimaryOperation();
 
-                            const drawEmoji = (position: Vector) => {
-                                // TODO: Instead of drawEmoji function there should be inficator in touch.frames.subscribe that it is forst frame (some frame index on the object TouchFrame)
+                            async function drawRandomArt(pointOnScreen: Vector) {
+                                operation
+                                    .newArts(await getRandomArt(collSpace.pickPoint(pointOnScreen).point))
+                                    .persist();
+                            }
 
-                                const fontSize =
-                                    Math.random() * (fontSizeRange.max - fontSizeRange.min) + fontSizeRange.min;
-
-                                const art = new TextArt(
-                                    randomItem(...emojis),
-                                    'red' /* TODO: Better */,
-                                    fontSize,
-                                    false,
-                                    false,
-                                    false,
-                                    'none',
-                                    Vector.zero(),
-                                );
-                                art.shift = collSpace.pickPoint(
-                                    position.subtract(new Vector(fontSize * (2 / 3), fontSize * (2 / 3))),
-                                ).point;
-
-                                operation.newArts(art).persist();
-                            };
-
-                            drawEmoji(Vector.fromObject(touch.firstFrame.position));
+                            drawRandomArt(Vector.fromObject(touch.firstFrame.position));
 
                             registerAdditionalSubscription(
                                 touch.frames.subscribe({
                                     next: (touchFrame) => {
                                         if (Math.random() > placeFrequency) return;
-                                        drawEmoji(Vector.fromObject(touchFrame.position));
+                                        drawRandomArt(Vector.fromObject(touchFrame.position));
                                     },
                                 }),
                             );
