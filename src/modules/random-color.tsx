@@ -9,7 +9,8 @@ declareModule(
         manifest: {
             name: '@hejny/random-color',
             title: { en: 'Drawing of random colors', cs: 'Kreslení náhodných barev' },
-            categories: ['Emojis', 'Fun'],
+            categories: ['Art', 'Fun'],
+            keywords: ['random', 'color', 'drawing', 'freehand', 'fun', 'rainbow'],
             icon: '🎨',
             contributors,
             description,

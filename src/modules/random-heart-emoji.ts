@@ -9,6 +9,7 @@ declareModule(
             deprecatedNames: ['HeartsEmojis'],
             title: { en: 'Drawing of hearts', cs: 'Kreslení srdcí' },
             categories: ['Emojis', 'Fun'],
+            keywords: ['random', 'heart', 'emoji', 'love'],
             icon: '❤️',
             contributors,
             description,
