@@ -1,4 +1,4 @@
-import './Animals';
+import './modules/Animals';
 import './Flowers';
 import './Hearts';
 

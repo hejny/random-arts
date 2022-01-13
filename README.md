@@ -7,11 +7,25 @@
 [![Issues](https://img.shields.io/github/issues/collboard/module-sample-objects.svg?style=flat)](https://github.com/collboard/module-sample-objects/issues)
 
 ## 🐇 Random animals
+
 <!-- TODO: Screenshot-->
+
 ## ⚜️ Random flowers
+
 <!-- TODO: Screenshot-->
+
 ## ❤️ Random hearts
+
 <!-- TODO: Screenshot-->
 
+## ⁉️ More random things
 
-<!-- TODO: More random things-->
+Feel free to add more random things here. Some ideas:
+
+-   Colors
+-   Names
+-   Numbers
+-   Dates
+-   Cities (maybe in cooperation with map modules)
+-   Countries (maybe in cooperation with map modules)
+    -   Flags

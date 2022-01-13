@@ -1,4 +1,5 @@
-import { declareModule, makeEmojisToolModule } from '@collboard/modules-sdk';
+import { declareModule } from '@collboard/modules-sdk';
+import { makeEmojisToolModule } from '../makers/makeEmojisToolModule';
 import { contributors, description, license, repository, version } from '../package.json';
 
 declareModule(
