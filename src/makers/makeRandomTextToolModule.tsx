@@ -9,16 +9,12 @@ import {
 import { Registration } from 'destroyable';
 import { Vector } from 'xyzt';
 
-/**
- * Makes toolbar icon module which setup/unsetup given submodule when user select/unselect icon
- * TODO: Probbably better name (makeIconModuleOnModule vs. makeIconModuleOnRoute)
- *
- */
-export function makeEmojisToolModule(protoModule: {
+
+export function makeRandomTextToolModule(protoModule: {
     manifest: IModuleManifest;
     fontSizeRange: { min: number; max: number } /* TODO: Interface for range */;
     placeFrequency: number;
-    emojis: string[];
+    items: IArrayable<string>;
 }): IModuleDefinition {
     const { manifest, fontSizeRange, placeFrequency, emojis } = protoModule;
 
