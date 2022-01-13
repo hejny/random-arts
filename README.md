@@ -24,8 +24,13 @@ Feel free to add more random things here. Some ideas:
 
 -   Colors
 -   Names
+    -   With disclaimer
+    -   http://www.nasejmena.cz/nj/cetnost.php?id=3100&typ=obec
+    -   https://cs.wikipedia.org/wiki/Seznam_k%C5%99estn%C3%ADch_jmen
+-   Seeds
 -   Numbers
 -   Dates
 -   Cities (maybe in cooperation with map modules)
 -   Countries (maybe in cooperation with map modules)
     -   Flags
+-   Random
