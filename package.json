@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "destroyable": "^0.9.0",
+        "type-fest": "^2.9.0",
         "xyzt": "^4.7.0"
     }
 }

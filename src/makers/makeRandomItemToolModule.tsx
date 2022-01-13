@@ -10,11 +10,11 @@ import { Registration } from 'destroyable';
 import { Vector } from 'xyzt';
 
 // TODO: DRY !!!
-export function makeRandomTextToolModule(protoModule: {
+export function makeRandomItemToolModule(protoModule: {
     manifest: IModuleManifest;
     fontSizeRange: { min: number; max: number } /* TODO: Interface for range */;
     placeFrequency: number;
-    items: IArrayable<string>;
+    getRandomIteem(): Promisable<AbstractArt>;
 }): IModuleDefinition {
     const { manifest, fontSizeRange, placeFrequency, emojis } = protoModule;
 
