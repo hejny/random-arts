@@ -15,7 +15,12 @@
             "name": "🧪 Lint",
             "command": "npm run lint",
             "onlySingle": true
+        },
+        {
+            "name": "🏭 Scrape czech names",
+            "cwd": "./scripts/scraper/",
+            "command": "ts-node ./scrape-czech-names.ts",
+            "onlySingle": true
         }
-    
     ]
 }
