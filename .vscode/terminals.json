@@ -9,18 +9,21 @@
         {
             "name": "🧪 Test",
             "command": "npm run test",
-            "onlySingle": true
+            "onlySingle": true,
+            "focus": true
         },
         {
             "name": "🧪 Lint",
             "command": "npm run lint",
-            "onlySingle": true
+            "onlySingle": true,
+            "focus": true
         },
         {
             "name": "🏭 Scrape czech names",
             "cwd": "./scripts/scraper/",
             "command": "ts-node ./scrape-czech-names.ts",
-            "onlySingle": true
+            "onlySingle": true,
+            "focus": true
         }
     ]
 }

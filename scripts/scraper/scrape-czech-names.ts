@@ -10,6 +10,7 @@ import { pushNames } from './pushNames';
 // Note: You can keep multiple uncommented lines below to scrape in multiple browsers
 /*/
 scrapeNames(
+    'Czech last names',
     'https://www.prijmeni.cz/oblast/3000-ceska_republika',
     '.itemprijmeni',
     pushNames.bind(null, 'czech-last-names'),
@@ -17,21 +18,29 @@ scrapeNames(
 /**/
 /**/
 scrapeNames(
+    'Czech first male names',
     'https://krestnijmeno.prijmeni.cz/oblast/3000-ceska_republika/muzska_jmena',
     '.itemjmeno',
     pushNames.bind(null, 'czech-first-male-names'),
 );
 /**/
-/*/
+/**/
 scrapeNames(
+    'Czech first female names',
     'https://krestnijmeno.prijmeni.cz/oblast/3000-ceska_republika/zenska_jmena',
     '.itemjmeno',
-    pushNames.bind(null, 'czech-first-female-last-names'),
+    pushNames.bind(null, 'czech-first-female-names'),
 );
 /**/
 
-async function scrapeNames(url: string, itemSelector: string, pushNames: (...names: IName[]) => Promise<void>) {
+async function scrapeNames(
+    title: string,
+    url: string,
+    itemSelector: string,
+    pushNames: (...names: IName[]) => Promise<void>,
+) {
     //console.info(chalk.bgGrey(` Scraping Czech names`));
+    console.info(` Scraping ${title}`);
 
     const browser = await puppeteer.launch({
         headless: false,
@@ -57,14 +66,17 @@ async function scrapeNames(url: string, itemSelector: string, pushNames: (...nam
         await page.click('#didomi-notice-agree-button' /* Note: EU Cookies */).catch(() => {});
 
         await pushNames(
-            ...(await page.evaluate(async () => {
-                const names: IName[] = [];
-                for (const element of Array.from(document.querySelectorAll(itemSelector))) {
-                    const [orderElement, nameElement, countElement] = Array.from(element.querySelectorAll('td'));
-                    names.push({ name: nameElement.innerText, count: parseInt(countElement.innerText) });
-                }
-                return names;
-            })),
+            ...(await page.evaluate(
+                async ({ itemSelector }) => {
+                    const names: IName[] = [];
+                    for (const element of Array.from(document.querySelectorAll(itemSelector))) {
+                        const [orderElement, nameElement, countElement] = Array.from(element.querySelectorAll('td'));
+                        names.push({ name: nameElement.innerText, count: parseInt(countElement.innerText) });
+                    }
+                    return names;
+                },
+                { itemSelector },
+            )),
         );
 
         await forTime(1000);
