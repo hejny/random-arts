@@ -1,6 +1,5 @@
-import { declareModule, FreehandArt, makeIconModuleOnModule, ToolbarName } from '@collboard/modules-sdk';
+import { declareModule, FreehandArt, makeIconModuleOnModule, React, ToolbarName } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
-import * as React from 'react';
 import { contributors, description, license, repository, version } from '../../package.json';
 import { randomColor } from '../utils/randomColor';
 
