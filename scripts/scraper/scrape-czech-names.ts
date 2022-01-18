@@ -60,3 +60,26 @@ async function main() {
         await forTime(1000);
     }
 }
+
+
+/**
+ * TODO: When scraping czech names, after a long while occured recurring error:
+ >
+ > (node:18072) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 82)
+ > (node:18072) UnhandledPromiseRejectionWarning: ProtocolError: Protocol error (Page.createIsolatedWorld): No frame for given id found
+ >     at C:\Users\me\work\collboard\random-arts\node_modules\puppeteer-core\src\common\Connection.ts:300:16
+ >     at new Promise (<anonymous>)
+ >     at CDPSession.send (C:\Users\me\work\collboard\random-arts\node_modules\puppeteer-core\src\common\Connection.ts:296:12)
+ >     at C:\Users\me\work\collboard\random-arts\node_modules\puppeteer-core\src\common\FrameManager.ts:396:19
+ >     at Array.map (<anonymous>)
+ >     at FrameManager._ensureIsolatedWorld (C:\Users\me\work\collboard\random-arts\node_modules\puppeteer-core\src\common\FrameManager.ts:395:10)
+ >     at runMicrotasks (<anonymous>)
+ >     at processTicksAndRejections (internal/process/task_queues.js:93:5)
+ >     at async Promise.all (index 1)
+ >     at FrameManager.initialize (C:\Users\me\work\collboard\random-arts\node_modules\puppeteer-core\src\common\FrameManager.ts:142:7)
+ > (node:18072) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 83)
+ > (node:18072) UnhandledPromiseRejectionWarning: TimeoutError: Navigation timeout of 30000 ms exceeded
+ >     at C:\Users\me\work\collboard\random-arts\node_modules\puppeteer-core\src\common\LifecycleWatcher.ts:205:18
+ > (node:18072) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 84)
+ >
+ */
