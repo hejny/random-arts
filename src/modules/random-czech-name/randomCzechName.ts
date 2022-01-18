@@ -1,10 +1,11 @@
-import CZECH_FIRST_FEMALE_NAMES from '../../data/czech-first-female-names.json';
-import CZECH_FIRST_MALE_NAMES from '../../data/czech-first-male-names.json';
-import CZECH_LAST_FEMALE_NAMES from '../../data/czech-last-female-names.json';
-import CZECH_LAST_MALE_NAMES from '../../data/czech-last-male-names.json';
-import { IName } from '../../scripts/scraper/IName';
-import { randomItem } from '../utils/randomItem';
-import { randomProportionalItem } from './randomProportionalItem';
+import CZECH_FIRST_FEMALE_NAMES from '../../../data/czech-first-female-names.json';
+import CZECH_FIRST_MALE_NAMES from '../../../data/czech-first-male-names.json';
+import CZECH_LAST_FEMALE_NAMES from '../../../data/czech-last-female-names.json';
+import CZECH_LAST_MALE_NAMES from '../../../data/czech-last-male-names.json';
+import { IName } from '../../../scripts/scraper/IName';
+import { randomItem } from '../../utils/randomItem';
+import { randomProportionalItem } from '../../utils/randomProportionalItem';
+import { IRandomCzechNameOptions } from './IRandomCzechNameOptions';
 
 export enum Gender {
     Male,
@@ -20,13 +21,6 @@ const CZECH_LAST_NAMES: Record<Gender, IName[]> = {
     [Gender.Female]: CZECH_LAST_FEMALE_NAMES,
     [Gender.Male]: CZECH_LAST_MALE_NAMES,
 };
-
-export interface IRandomCzechNameOptions {
-    pickGender?: Gender;
-    isProportionallyRandom: boolean;
-    hasFirstName: boolean;
-    hasLastName: boolean;
-}
 
 export function randomCzechName({
     isProportionallyRandom,
