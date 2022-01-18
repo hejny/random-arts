@@ -79,5 +79,6 @@ export function RandomCzechNameMenu({
 }
 
 /**
+ * TODO: !!! Options are strangely not preserved
  * TODO: some prettier way how to combine internal and external state
  */

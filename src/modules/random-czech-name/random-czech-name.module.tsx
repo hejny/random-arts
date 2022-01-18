@@ -24,9 +24,12 @@ declareModule(() => {
         manifest: {
             name: '@hejny/random-czech-name',
             // Note: This module is only in Czech language
+            // TODO: Make this module visible only in czech language
             title: { cs: 'Náhodné české jméno a příjmení' },
             categories: ['Fun', 'Czech'],
             keywords: ['random', 'czech', 'name', 'surname', 'firstname'],
+
+            // TODO: Repair icon in modules store
             icon: '🧑‍🤝‍🧑',
             contributors,
             description,
