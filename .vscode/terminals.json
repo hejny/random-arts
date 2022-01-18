@@ -24,6 +24,13 @@
             "command": "ts-node ./scrape-czech-names.ts",
             "onlySingle": true,
             "focus": true
+        },
+        {
+            "name": "🏭 Classify lastnames",
+            "cwd": "./scripts/scraper/",
+            "command": "ts-node ./classify-lastnames.ts",
+            "onlySingle": true,
+            "focus": true
         }
     ]
 }
