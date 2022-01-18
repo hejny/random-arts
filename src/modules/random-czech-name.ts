@@ -2,8 +2,7 @@ import { declareModule, TextArt } from '@collboard/modules-sdk';
 import { Vector } from 'xyzt';
 import { contributors, description, license, repository, version } from '../../package.json';
 import { makeRandomItemToolModule } from '../makers/makeRandomItemToolModule';
-import { randomCzechFirstname } from '../utils/randomCzechFirstname';
-import { randomCzechLastname } from '../utils/randomCzechLastname';
+import { randomCzechName } from '../utils/randomCzechName';
 
 declareModule(
     makeRandomItemToolModule({
@@ -24,7 +23,7 @@ declareModule(
         placeFrequency: 0.07,
         getRandomArt(pointOnBoard: Vector) {
             const art = new TextArt(
-                `${randomCzechFirstname()} ${randomCzechLastname()}`,
+                randomCzechName({ includeFirstName: true, includeLastName: true }),
                 'black',
                 24,
                 false,
