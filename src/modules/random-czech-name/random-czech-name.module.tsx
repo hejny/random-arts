@@ -61,15 +61,15 @@ declareModule(() => {
                     collSpace,
                     materialArtVersioningSystem,
                     attributesSystem,
-                    //storageSystem,
-                    //notificationSystem,
+                    // storageSystem,
+                    // notificationSystem,
                 } = await systems.request(
                     'touchController',
                     'collSpace',
                     'materialArtVersioningSystem',
                     'attributesSystem',
-                    //'storageSystem',
-                    //'notificationSystem',
+                    // 'storageSystem',
+                    // 'notificationSystem',
                 );
 
                 return Registration.fromSubscription((registerAdditionalSubscription) =>
@@ -125,6 +125,5 @@ declareModule(() => {
 });
 
 /**
-
  * TODO: Disclaimer
  */
