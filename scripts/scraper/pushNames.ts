@@ -2,8 +2,7 @@ import { writeFile } from 'fs/promises';
 import { join } from 'path';
 import { IName } from './IName';
 
-const allNames: IName[] = [];
-export async function pushNames(fileName: string, ...newNames: IName[]) {
+export async function pushNames(fileName: string, allNames: IName[], ...newNames: IName[]) {
     for (const newName of newNames) {
         if (!allNames.some((name) => name.name === newName.name)) {
             allNames.push(newName);

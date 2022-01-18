@@ -13,7 +13,7 @@ scrapeNames(
     'Czech last names',
     'https://www.prijmeni.cz/oblast/3000-ceska_republika',
     '.itemprijmeni',
-    pushNames.bind(null, 'czech-last-names'),
+    pushNames.bind(null, 'czech-last-names',[]),
 );
 /**/
 /**/
@@ -21,7 +21,7 @@ scrapeNames(
     'Czech first male names',
     'https://krestnijmeno.prijmeni.cz/oblast/3000-ceska_republika/muzska_jmena',
     '.itemjmeno',
-    pushNames.bind(null, 'czech-first-male-names'),
+    pushNames.bind(null, 'czech-first-male-names', []),
 );
 /**/
 /**/
@@ -29,7 +29,7 @@ scrapeNames(
     'Czech first female names',
     'https://krestnijmeno.prijmeni.cz/oblast/3000-ceska_republika/zenska_jmena',
     '.itemjmeno',
-    pushNames.bind(null, 'czech-first-female-names'),
+    pushNames.bind(null, 'czech-first-female-names', []),
 );
 /**/
 
