@@ -23,7 +23,12 @@ declareModule(
         placeFrequency: 0.07,
         getRandomArt(pointOnBoard: Vector) {
             const art = new TextArt(
-                randomCzechName({ includeFirstName: true, includeLastName: true }),
+                randomCzechName({
+                    // TODO: pickGender: Gende,
+                    isProportionallyRandom: true,
+                    hasFirstName: true,
+                    hasLastName: true,
+                }),
                 'black',
                 24,
                 false,
@@ -46,4 +51,5 @@ declareModule(
  * TODO: Toggle gender
  * TODO: Disclaimer
  * TODO: Text cursor
+ * TODO: Use useState as state
  */
