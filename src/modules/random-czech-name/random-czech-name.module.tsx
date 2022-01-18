@@ -38,7 +38,7 @@ declareModule(() => {
         icon: (systems) => ({
             order: 10,
             char: '🧑‍🤝‍🧑',
-            boardCursor: 'crosshair',
+            boardCursor: 'text',
             async menu() {
                 return (
                     <RandomCzechNameMenu
@@ -56,17 +56,25 @@ declareModule(() => {
 
         moduleActivatedByIcon: {
             async setup(systems) {
-                const { touchController, collSpace, materialArtVersioningSystem, attributesSystem } =
-                    await systems.request(
-                        'touchController',
-                        'collSpace',
-                        'materialArtVersioningSystem',
-                        'attributesSystem',
-                    );
+                const {
+                    touchController,
+                    collSpace,
+                    materialArtVersioningSystem,
+                    attributesSystem,
+                    //storageSystem,
+                    //notificationSystem,
+                } = await systems.request(
+                    'touchController',
+                    'collSpace',
+                    'materialArtVersioningSystem',
+                    'attributesSystem',
+                    //'storageSystem',
+                    //'notificationSystem',
+                );
 
                 return Registration.fromSubscription((registerAdditionalSubscription) =>
                     touchController.touches.subscribe({
-                        next(touch) {
+                        async next(touch) {
                             materialArtVersioningSystem
                                 .createPrimaryOperation()
                                 .newArts(
@@ -88,6 +96,26 @@ declareModule(() => {
                                     ),
                                 )
                                 .persist();
+
+                            /*
+                            > TODO: There should be some easy way to do notification with memory - keeping it for the future
+
+                            const storage = storageSystem.getStorage<boolean>(
+                                '@hejny/random-czech-name' /* TODO: There should be no need to scope manually * /,
+                            );
+                            if (!(await storage.getItem('readDisclaimer'))) {
+                                notificationSystem.publish({
+                                    type: 'info',
+                                    tag: `random-czech-name-disclaimer`,
+                                    title: { en: 'Disclaimer', cs: 'Poznámka' },
+                                    body: { en: 'Disclaimer', cs: 'Poznámka' },
+                                    canBeClosed: true,
+                                    onClose: async () => {
+
+                                    }
+                                });
+                            }
+                            */
                         },
                     }),
                 );
@@ -97,9 +125,6 @@ declareModule(() => {
 });
 
 /**
- * TODO: Toggle name + surname
- * TODO: Toggle gender
+
  * TODO: Disclaimer
- * TODO: Text cursor
- * TODO: Use useState as state
  */
