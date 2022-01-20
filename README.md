@@ -1,11 +1,11 @@
 # 🐇🥀💚 Random emojis
 
 <!--Badges-->
-[![License](https://img.shields.io/github/license/collboard/module-sample-objects.svg?style=flat)](https://raw.githubusercontent.com/collboard/module-sample-objects/master/LICENSE)
-[![Test](https://github.com/collboard/module-sample-objects/actions/workflows/test.yml/badge.svg)](https://github.com/collboard/module-sample-objects/actions/workflows/test.yml)
-[![Lint](https://github.com/collboard/module-sample-objects/actions/workflows/lint.yml/badge.svg)](https://github.com/collboard/module-sample-objects/actions/workflows/lint.yml)
-[![Known Vulnerabilities](https://snyk.io/test/github/collboard/module-sample-objects/badge.svg)](https://snyk.io/test/github/collboard/module-sample-objects)
-[![Issues](https://img.shields.io/github/issues/collboard/module-sample-objects.svg?style=flat)](https://github.com/collboard/module-sample-objects/issues)
+[![License](https://img.shields.io/github/license/hejny/random-arts.svg?style=flat)](https://raw.githubusercontent.com/hejny/random-arts/master/LICENSE)
+[![Test](https://github.com/hejny/random-arts/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/test.yml)
+[![Lint](https://github.com/hejny/random-arts/actions/workflows/lint.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/lint.yml)
+[![Known Vulnerabilities](https://snyk.io/test/github/hejny/random-arts/badge.svg)](https://snyk.io/test/github/hejny/random-arts)
+[![Issues](https://img.shields.io/github/issues/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/issues)
 <!--/Badges-->
 
 ## 🐇 Random animals
