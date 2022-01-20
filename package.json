@@ -1,6 +1,6 @@
 {
     "name": "@hejny/random-arts",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "description": "Multiple modules which provides random arts to the board",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
