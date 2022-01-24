@@ -12,23 +12,23 @@
 
 ## 🐇 Random animals
 
-![Screencast of random-animal-emoji](assets\screencasts\random-animal-emoji.gif)
+[![Screencast of random-animal-emoji](assets\screencasts\random-animal-emoji.gif) Create your 🐇 board](https://collboard.com/new?redirect=1&modulesOn=@hejny/random-animal-emoji&importAsMaterialize=https%3A%2F%2Fcollboard.com%2F3rfkxx47m7zmxfup7yrf)
 
 ## ⚜️ Random flowers
 
-![Screencast of random-flower-emoji](assets\screencasts\random-flower-emoji.gif)
+[![Screencast of random-flower-emoji](assets\screencasts\random-flower-emoji.gif) Create your ⚜️ board](https://collboard.com/new?redirect=1&modulesOn=@hejny/random-flower-emoji)
 
 ## ❤️ Random heart
 
-![Screencast of random-heart-emoji](assets\screencasts\random-heart-emoji.gif)
+[![Screencast of random-heart-emoji](assets\screencasts\random-heart-emoji.gif) Create your ❤️ board](https://collboard.com/new?redirect=1&modulesOn=@hejny/random-heart-emoji)
 
 ## 🌈 Random color
 
-![Screencast of random-color](assets\screencasts\random-color.gif)
+[![Screencast of random-color](assets\screencasts\random-color.gif) Create your 🌈 board](https://collboard.com/new?redirect=1&modulesOn=@hejny/random-color)
 
 ## 🧑‍🤝‍🧑🇨🇿 Random Czech name
 
-![Screencast of random-czech-name](assets\screencasts\random-czech-name.gif)
+[![Screencast of random-czech-name](assets\screencasts\random-czech-name.gif) Create your 🧑‍🤝‍🧑🇨🇿 board](https://collboard.com/new?redirect=1&modulesOn=@hejny/random-czech-name)
 
 ## ⁉️ More random things
 
