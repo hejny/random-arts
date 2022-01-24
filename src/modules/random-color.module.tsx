@@ -10,7 +10,7 @@ declareModule(
             title: { en: 'Drawing of random colors', cs: 'Kreslení náhodných barev' },
             categories: ['Art', 'Fun'],
             keywords: ['random', 'color', 'drawing', 'freehand', 'fun', 'rainbow'],
-            icon: '🎨',
+            icon: '🌈',
             contributors,
             description,
             license,

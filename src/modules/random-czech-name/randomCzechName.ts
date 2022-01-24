@@ -49,5 +49,6 @@ export function randomCzechName({
  * TODO: Names like Anežka Hodinová-Spurná
  * TODO: Names like Anna Červený
  * TODO: Joke names like X Æ A-Xii Musk
+ * TODO: Add disclaimer
  * Note: Names are separated by "-" not "–⁠" @see https://prirucka.ujc.cas.cz/?id=164
  */
