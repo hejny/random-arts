@@ -34,9 +34,10 @@
 
 Feel free to add more random things here. Some ideas:
 
--   Random with seeds
+-   Random from a seed
 -   Numbers
 -   Dates
 -   Cities (maybe in cooperation with map modules)
 -   Countries (maybe in cooperation with map modules)
     -   Flags
+-   Random names from more countries
