@@ -22,6 +22,8 @@ export function RandomCzechNameMenu({
         setOptionsExternal(newOptions);
     };
 
+    const gender: Gender = options.pickGender || Gender.Female; /*randomItem(Gender.Female, Gender.Male)*/
+
     return (
         <>
             {attributesSystem.inputRender('fontStyle')}
@@ -39,22 +41,22 @@ export function RandomCzechNameMenu({
             <Separator />
 
             <Icon
-                char="Jan"
-                className="stretched-icon-for-jan"
+                char={{ [Gender.Male]: 'Jan', [Gender.Female]: 'Jana' }[gender]}
+                className="stretched-icon-for-jana"
                 active={options.hasFirstName && !options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: true, hasLastName: false })}
             />
 
             <Icon
-                char="Jan Novák"
-                className="stretched-icon-for-jan-novak"
+                char={{ [Gender.Male]: 'Jan Novák', [Gender.Female]: 'Jana Nováková' }[gender]}
+                className="stretched-icon-for-jana-novak"
                 active={options.hasFirstName && options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: true, hasLastName: true })}
             />
 
             <Icon
-                char="Novák"
-                className="stretched-icon-for-novak"
+                char={{ [Gender.Male]: 'Novák', [Gender.Female]: 'Nováková' }[gender]}
+                className="stretched-icon-for-novakova"
                 active={!options.hasFirstName && options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: false, hasLastName: true })}
             />

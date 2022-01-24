@@ -1,11 +1,15 @@
-.stretched-icon-for-jan {
-    width: 2em;
+.stretched-icon-for-jana {
+    width: 2.5em;
 }
 
-.stretched-icon-for-novak {
-    width: 3.2em;
+.stretched-icon-for-novakova {
+    width: 4.7em;
 }
 
-.stretched-icon-for-jan-novak {
-    width: 5em;
+.stretched-icon-for-jana-novak {
+    width: 6.9em;
 }
+
+/**
+* TODO: Better fit for text in the menu
+*/
