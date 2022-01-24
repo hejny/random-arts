@@ -61,13 +61,13 @@ export function RandomCzechNameMenu({
             <Separator />
             <Icon
                 char="🙋‍♂️"
-                active={options.pickGender === undefined}
-                onClick={() => setOptions({ pickGender: undefined })}
+                active={options.pickGender === Gender.Male}
+                onClick={() => setOptions({ pickGender: Gender.Male })}
             />
             <Icon
                 char="🧑‍🤝‍🧑"
-                active={options.pickGender === Gender.Male}
-                onClick={() => setOptions({ pickGender: Gender.Male })}
+                active={options.pickGender === undefined}
+                onClick={() => setOptions({ pickGender: undefined })}
             />
             <Icon
                 char="🙋‍♀️"

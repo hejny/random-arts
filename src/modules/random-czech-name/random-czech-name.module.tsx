@@ -14,7 +14,6 @@ import { RandomCzechNameMenu } from './RandomCzechNameMenu';
 
 declareModule(() => {
     let options: IRandomCzechNameOptions = {
-        // TODO: pickGender: Gende,
         isProportionallyRandom: true,
         hasFirstName: true,
         hasLastName: true,
@@ -78,6 +77,8 @@ declareModule(() => {
                 return Registration.fromSubscription((registerAdditionalSubscription) =>
                     touchController.touches.subscribe({
                         async next(touch) {
+                            // console.log(options);
+
                             materialArtVersioningSystem
                                 .createPrimaryOperation()
                                 .newArts(

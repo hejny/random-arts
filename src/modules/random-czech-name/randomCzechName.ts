@@ -8,8 +8,8 @@ import { randomProportionalItem } from '../../utils/randomProportionalItem';
 import { IRandomCzechNameOptions } from './IRandomCzechNameOptions';
 
 export enum Gender {
-    Male,
-    Female,
+    Male = 'MALE',
+    Female = 'FEMALE',
 }
 
 const CZECH_FIRST_NAMES: Record<Gender, IName[]> = {
