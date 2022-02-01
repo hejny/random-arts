@@ -2,11 +2,14 @@
 
 <!--Badges-->
 
-[![License](https://img.shields.io/github/license/hejny/random-arts.svg?style=flat)](https://raw.githubusercontent.com/hejny/random-arts/master/LICENSE)
-[![Test](https://github.com/hejny/random-arts/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/test.yml)
-[![Lint](https://github.com/hejny/random-arts/actions/workflows/lint.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/lint.yml)
-[![Known Vulnerabilities](https://snyk.io/test/github/hejny/random-arts/badge.svg)](https://snyk.io/test/github/hejny/random-arts)
-[![Issues](https://img.shields.io/github/issues/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/issues)
+ [![Package Quality](https://packagequality.com/shield/random-arts.svg)](https://packagequality.com/#?package=random-arts)
+ [![License](https://img.shields.io/github/license/hejny/random-arts.svg?style=flat)](https://raw.githubusercontent.com/hejny/random-arts/master/LICENSE)
+ [![NPM Version](https://badge.fury.io/js/@hejny%2Frandom-arts.svg)](https://www.npmjs.com/package/@hejny/random-arts)
+ [![undefined](https://github.com/hejny/random-arts/actions/workflows/lint.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/lint.yml.yml)
+ [![undefined](https://github.com/hejny/random-arts/actions/workflows/publish.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/publish.yml.yml)
+ [![undefined](https://github.com/hejny/random-arts/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/test.yml.yml)
+ [![Known Vulnerabilities](https://snyk.io/test/github/hejny/random-arts/badge.svg)](https://snyk.io/test/github/hejny/random-arts)
+ [![Issues](https://img.shields.io/github/issues/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/issues)
 
 <!--/Badges-->
 
