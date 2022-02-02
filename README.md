@@ -2,11 +2,11 @@
 
 <!--Badges-->
 
- [![License of 🐇🥀💚 Random emojis](https://img.shields.io/github/license/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/blob/main/LICENSE)
- [![lint](https://github.com/hejny/random-arts/actions/workflows/lint.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/lint.yml)
- [![test](https://github.com/hejny/random-arts/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/test.yml)
- [![Known Vulnerabilities](https://snyk.io/test/github/hejny/random-arts/badge.svg)](https://snyk.io/test/github/hejny/random-arts)
- [![Issues](https://img.shields.io/github/issues/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/issues)
+[![License of 🐇🥀💚 Random emojis](https://img.shields.io/github/license/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/blob/main/LICENSE)
+[![lint](https://github.com/hejny/random-arts/actions/workflows/lint.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/lint.yml)
+[![test](https://github.com/hejny/random-arts/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/test.yml)
+[![Known Vulnerabilities](https://snyk.io/test/github/hejny/random-arts/badge.svg)](https://snyk.io/test/github/hejny/random-arts)
+[![Issues](https://img.shields.io/github/issues/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/issues)
 
 <!--/Badges-->
 
