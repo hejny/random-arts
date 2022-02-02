@@ -2,8 +2,7 @@
 
 <!--Badges-->
 
- [![Package Quality](https://packagequality.com/shield/random-arts.svg)](https://packagequality.com/#?package=random-arts)
- [![License](https://img.shields.io/github/license/hejny/random-arts.svg?style=flat)](https://raw.githubusercontent.com/hejny/random-arts/master/LICENSE)
+ [![License of 🐇🥀💚 Random emojis](https://img.shields.io/github/license/hejny/random-arts.svg?style=flat)](https://github.com/hejny/random-arts/blob/main/LICENSE)
  [![lint](https://github.com/hejny/random-arts/actions/workflows/lint.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/lint.yml)
  [![test](https://github.com/hejny/random-arts/actions/workflows/test.yml/badge.svg)](https://github.com/hejny/random-arts/actions/workflows/test.yml)
  [![Known Vulnerabilities](https://snyk.io/test/github/hejny/random-arts/badge.svg)](https://snyk.io/test/github/hejny/random-arts)
