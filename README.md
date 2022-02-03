@@ -39,5 +39,15 @@ Feel free to add more random things here. Some ideas:
 -   Dates
 -   Cities (maybe in cooperation with map modules)
 -   Countries (maybe in cooperation with map modules)
-    -   Flags
+-   Flags
 -   Random names from more countries
+
+
+
+<!--Contributing-->
+
+## 🖋️ Contributing
+
+I am open to pull requests, feedback, and suggestions. Or if you like this utility, you can [☕ buy me a coffee](https://www.buymeacoffee.com/hejny) or [donate via cryptocurrencies](https://github.com/hejny/hejny/blob/main/documents/crypto.md).
+
+<!--/Contributing-->
