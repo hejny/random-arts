@@ -22,8 +22,7 @@ export function makeRandomItemToolModule(protoModule: {
         toolbar: ToolbarName.Tools,
         icon: {
             order: 10,
-
-            icon: manifest.icon,
+            icon: manifest.icon!,
             boardCursor: 'crosshair',
         },
         moduleActivatedByIcon: {

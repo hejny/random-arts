@@ -33,7 +33,7 @@ export function RandomCzechNameMenu({
             {attributesSystem.inputRender('color')}
             <Separator />
             <Icon
-                char="⭐"
+                icon="⭐"
                 active={options.isProportionallyRandom}
                 onClick={() => setOptions({ isProportionallyRandom: !options.isProportionallyRandom })}
                 // TODO: Title with explanation
@@ -41,38 +41,38 @@ export function RandomCzechNameMenu({
             <Separator />
 
             <Icon
-                char={{ [Gender.Male]: 'Jan', [Gender.Female]: 'Jana' }[gender]}
+                icon={{ [Gender.Male]: 'Jan', [Gender.Female]: 'Jana' }[gender]}
                 className="stretched-icon-for-jana"
                 active={options.hasFirstName && !options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: true, hasLastName: false })}
             />
 
             <Icon
-                char={{ [Gender.Male]: 'Jan Novák', [Gender.Female]: 'Jana Nováková' }[gender]}
+                icon={{ [Gender.Male]: 'Jan Novák', [Gender.Female]: 'Jana Nováková' }[gender]}
                 className="stretched-icon-for-jana-novak"
                 active={options.hasFirstName && options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: true, hasLastName: true })}
             />
 
             <Icon
-                char={{ [Gender.Male]: 'Novák', [Gender.Female]: 'Nováková' }[gender]}
+                icon={{ [Gender.Male]: 'Novák', [Gender.Female]: 'Nováková' }[gender]}
                 className="stretched-icon-for-novakova"
                 active={!options.hasFirstName && options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: false, hasLastName: true })}
             />
             <Separator />
             <Icon
-                char="🙋‍♂️"
+                icon="🙋‍♂️"
                 active={options.pickGender === Gender.Male}
                 onClick={() => setOptions({ pickGender: Gender.Male })}
             />
             <Icon
-                char="🧑‍🤝‍🧑"
+                icon="🧑‍🤝‍🧑"
                 active={options.pickGender === undefined}
                 onClick={() => setOptions({ pickGender: undefined })}
             />
             <Icon
-                char="🙋‍♀️"
+                icon="🙋‍♀️"
                 active={options.pickGender === Gender.Female}
                 onClick={() => setOptions({ pickGender: Gender.Female })}
             />

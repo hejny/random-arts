@@ -23,7 +23,7 @@ declareModule(
             return {
                 autoSelect: true,
                 order: 10,
-                char: '🎨',
+                icon: '🎨',
                 boardCursor: 'crosshair',
                 menu: <>{attributesSystem.inputRender('weight')}</>,
             };

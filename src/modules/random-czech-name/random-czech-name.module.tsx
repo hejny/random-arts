@@ -39,7 +39,7 @@ declareModule(() => {
         toolbar: ToolbarName.Tools,
         icon: (systems) => ({
             order: 10,
-            char: '🧑‍🤝‍🧑',
+            icon: '🧑‍🤝‍🧑',
             boardCursor: 'text',
             async menu() {
                 return (
