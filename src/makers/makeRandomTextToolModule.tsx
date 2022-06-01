@@ -1,4 +1,4 @@
-import { IArrayable, IModuleDefinition, IModuleManifest, randomItem, TextArt, toArray } from '@collboard/modules-sdk';
+import { Arrayable, IModuleDefinition, IModuleManifest, randomItem, TextArt, toArray } from '@collboard/modules-sdk';
 import { Vector } from 'xyzt';
 import { makeRandomItemToolModule } from './makeRandomItemToolModule';
 
@@ -6,7 +6,7 @@ export function makeRandomTextToolModule(protoModule: {
     manifest: IModuleManifest;
     fontSizeRange: { min: number; max: number } /* TODO: Interface for range */;
     placeFrequency: number;
-    items: IArrayable<string>;
+    items: Arrayable<string>;
 }): IModuleDefinition {
     const { fontSizeRange, items } = protoModule;
 
