@@ -96,7 +96,7 @@ declareModule(() => {
                                             attributesSystem.getAttributeValue('fontStyle') as IFontStyleAttributeValue
                                         ).underline,
                                         /*(attributesSystem.getAttributeValue('listStyle') as string) as listStyle*/ 'none',
-                                        collSpace.pickPoint(touch.firstFrame.position).point,
+                                        (await collSpace.pickPoint(touch.firstFrame.position)).point,
                                     ),
                                 )
                                 .persist();

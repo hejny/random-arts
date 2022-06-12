@@ -54,8 +54,8 @@ declareModule(
                         registerAdditionalSubscription(
                             touch.frames.subscribe({
                                 // TODO: There should be some predetermined order which subscriber (freehand,move,...) to call first which second... and it should be determined by module priority NOT installation (subscription) order
-                                next(touchFrame) {
-                                    touchFrame.position = collSpace.pickPoint(touchFrame.position).point;
+                                async next(touchFrame) {
+                                    touchFrame.position = (await collSpace.pickPoint(touchFrame.position)).point;
                                     artInProcess.frames.push(touchFrame);
                                     operation.update(artInProcess);
                                 },

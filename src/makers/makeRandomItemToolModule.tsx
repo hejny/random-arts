@@ -39,7 +39,7 @@ export function makeRandomItemToolModule(protoModule: {
 
                             async function drawRandomArt(pointOnScreen: Vector) {
                                 operation
-                                    .newArts(await getRandomArt(collSpace.pickPoint(pointOnScreen).point))
+                                    .newArts(await getRandomArt((await collSpace.pickPoint(pointOnScreen)).point))
                                     .persist();
                             }
 
