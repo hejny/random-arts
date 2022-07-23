@@ -24,9 +24,9 @@ export function makeRandomTextToolModule(protoModule: {
                 false,
                 false,
                 'none',
-                new Vector(fontSize * (2 / 3), fontSize * (2 / 3)),
+            ).setShift(
+                pointOnBoard, // TODO: Remove: .subtract(new Vector(fontSize * (2 / 3), fontSize * (2 / 3))).
             );
-            art.shift = pointOnBoard.subtract(new Vector(fontSize * (2 / 3), fontSize * (2 / 3)));
 
             return art;
         },
