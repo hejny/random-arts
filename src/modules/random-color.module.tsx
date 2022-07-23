@@ -45,7 +45,7 @@ declareModule(
                         const artInProcess = new FreehandArt(
                             [],
                             randomColor(),
-                            attributesSystem.getAttributeValue('weight') as number,
+                            attributesSystem.getAttributeValue('weight').value as number,
                         );
 
                         const operation = materialArtVersioningSystem.createPrimaryOperation();

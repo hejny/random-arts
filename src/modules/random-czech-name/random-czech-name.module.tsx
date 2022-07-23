@@ -84,20 +84,22 @@ declareModule(() => {
                                 .newArts(
                                     new TextArt(
                                         randomCzechName(options),
-                                        attributesSystem.getAttributeValue('color') as string,
-                                        attributesSystem.getAttributeValue('fontSize') as number,
+                                        attributesSystem.getAttributeValue('color').value as string,
+                                        attributesSystem.getAttributeValue('fontSize').value as number,
                                         (
-                                            attributesSystem.getAttributeValue('fontStyle') as IFontStyleAttributeValue
+                                            attributesSystem.getAttributeValue('fontStyle')
+                                                .value as IFontStyleAttributeValue
                                         ).bold,
                                         (
-                                            attributesSystem.getAttributeValue('fontStyle') as IFontStyleAttributeValue
+                                            attributesSystem.getAttributeValue('fontStyle')
+                                                .value as IFontStyleAttributeValue
                                         ).italic,
                                         (
-                                            attributesSystem.getAttributeValue('fontStyle') as IFontStyleAttributeValue
+                                            attributesSystem.getAttributeValue('fontStyle')
+                                                .value as IFontStyleAttributeValue
                                         ).underline,
                                         /*(attributesSystem.getAttributeValue('listStyle') as string) as listStyle*/ 'none',
-                                        (await collSpace.pickPoint(touch.firstFrame.position)).point,
-                                    ),
+                                    ).setShift((await collSpace.pickPoint(touch.firstFrame.position)).point),
                                 )
                                 .persist();
 
