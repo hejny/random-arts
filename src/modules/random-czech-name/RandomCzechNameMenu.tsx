@@ -25,6 +25,7 @@ export function RandomCzechNameMenu({
     const gender: Gender = options.pickGender || Gender.Female; /*randomItem(Gender.Female, Gender.Male)*/
 
     return (
+      // TODO: !!! Use IconText
         <>
             {attributesSystem.inputRender('fontStyle')}
             <Separator />
@@ -39,6 +40,7 @@ export function RandomCzechNameMenu({
                 // TODO: Title with explanation
             />
             <Separator />
+
 
             <Icon
                 icon={{ [Gender.Male]: 'Jan', [Gender.Female]: 'Jana' }[gender]}
