@@ -1,6 +1,6 @@
 {
     "name": "@hejny/random-arts",
-    "version": "0.3.130",
+    "version": "0.3.137",
     "description": "🐇 Random animals",
     "license": "SEE LICENSE IN LICENSE",
     "contributors": [
@@ -19,7 +19,7 @@
         "postversion": "git push && git push --tags"
     },
     "devDependencies": {
-        "@collboard/modules-sdk": "30.0.0",
+        "@collboard/modules-sdk": "32.0.0",
         "locate-app": "1.2.0",
         "puppeteer-core": "13.1.3",
         "tslint": "6.1.3",
