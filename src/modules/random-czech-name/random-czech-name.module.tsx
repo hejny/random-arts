@@ -1,10 +1,10 @@
 import {
-    declareModule,
-    IFontStyleAttributeValue,
-    makeIconModuleOnModule,
-    React,
-    TextArt,
-    ToolbarName,
+  declareModule,
+  IFontStyleAttributeValue,
+  makeIconModuleOnModule,
+  React,
+  TextArt,
+  ToolbarName
 } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
 import { contributors, description, license, repository, version } from '../../../package.json';

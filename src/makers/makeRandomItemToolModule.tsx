@@ -1,9 +1,9 @@
 import {
-    AbstractArt,
-    IModuleDefinition,
-    IModuleManifest,
-    makeIconModuleOnModule,
-    ToolbarName,
+  AbstractArt,
+  IModuleDefinition,
+  IModuleManifest,
+  makeIconModuleOnModule,
+  ToolbarName
 } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
 import { Promisable } from 'type-fest';
