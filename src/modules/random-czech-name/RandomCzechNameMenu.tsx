@@ -1,4 +1,4 @@
-import { AttributesSystem, Icon, React, Separator } from '@collboard/modules-sdk';
+import { AttributesSystem, Icon, IconText, React, Separator } from '@collboard/modules-sdk';
 import { IRandomCzechNameOptions } from './IRandomCzechNameOptions';
 import { Gender } from './randomCzechName';
 import './style.css';
@@ -25,7 +25,7 @@ export function RandomCzechNameMenu({
     const gender: Gender = options.pickGender || Gender.Female; /*randomItem(Gender.Female, Gender.Male)*/
 
     return (
-      // TODO: !!! Use IconText
+        // TODO: !!! Use IconText
         <>
             {attributesSystem.inputRender('fontStyle')}
             <Separator />
@@ -41,27 +41,29 @@ export function RandomCzechNameMenu({
             />
             <Separator />
 
-
-            <Icon
-                icon={{ [Gender.Male]: 'Jan', [Gender.Female]: 'Jana' }[gender]}
+            <IconText
                 className="stretched-icon-for-jana"
                 active={options.hasFirstName && !options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: true, hasLastName: false })}
-            />
+            >
+                {{ [Gender.Male]: 'Jan', [Gender.Female]: 'Jana' }[gender]}
+            </IconText>
 
-            <Icon
-                icon={{ [Gender.Male]: 'Jan Novák', [Gender.Female]: 'Jana Nováková' }[gender]}
+            <IconText
                 className="stretched-icon-for-jana-novak"
                 active={options.hasFirstName && options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: true, hasLastName: true })}
-            />
+            >
+                {{ [Gender.Male]: 'Jan Novák', [Gender.Female]: 'Jana Nováková' }[gender]}
+            </IconText>
 
-            <Icon
-                icon={{ [Gender.Male]: 'Novák', [Gender.Female]: 'Nováková' }[gender]}
+            <IconText
                 className="stretched-icon-for-novakova"
                 active={!options.hasFirstName && options.hasLastName}
                 onClick={() => setOptions({ hasFirstName: false, hasLastName: true })}
-            />
+            >
+                {{ [Gender.Male]: 'Novák', [Gender.Female]: 'Nováková' }[gender]}
+            </IconText>
             <Separator />
             <Icon
                 icon="🙋‍♂️"
