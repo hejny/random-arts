@@ -1,7 +1,10 @@
 import {
-  declareModule, FreehandArt, makeIconModuleOnModule, React,
-  TextArt,
-  ToolbarName
+    declareModule,
+    FreehandArt,
+    makeIconModuleOnModule,
+    React,
+    TextArt,
+    ToolbarName,
 } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
 import { contributors, description, license, repository, version } from '../../package.json';
@@ -46,11 +49,12 @@ declareModule(
                     touchController.touches.subscribe((touch) => {
                         appState.cancelSelection();
 
+                        // tslint:disable-next-line:no-console
                         console.log('🎇 From module', { FreehandArt, TextArt });
 
                         materialArtVersioningSystem
                             .createPrimaryOperation()
-                            //.newArts(new TextArt('x', randomColor(), 50, false, false, false, 'none'))
+                            // .newArts(new TextArt('x', randomColor(), 50, false, false, false, 'none'))
                             .newArts(new FreehandArt([touch.firstFrame], randomColor(), 10))
                             .persist();
 
