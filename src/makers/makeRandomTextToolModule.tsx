@@ -18,7 +18,7 @@ export function makeRandomTextToolModule(protoModule: {
 
             const art = new TextArt(
                 randomItem(...toArray(items)),
-                'red' /* TODO: Better */,
+                '#777',
                 fontSize,
                 false,
                 false,

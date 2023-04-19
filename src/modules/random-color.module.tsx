@@ -1,4 +1,11 @@
-import { declareModule, FreehandArt, makeIconModuleOnModule, React, ToolbarName } from '@collboard/modules-sdk';
+import {
+    FreehandArt,
+    React,
+    TextArt,
+    ToolbarName,
+    declareModule,
+    makeIconModuleOnModule,
+} from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
 import { contributors, description, license, repository, version } from '../../package.json';
 import { randomColor } from '../utils/randomColor';
@@ -24,7 +31,7 @@ declareModule(
                 autoSelect: true,
                 order: 10,
                 icon: '🎨',
-                boardCursor: 'crosshair',
+                boardCursor: `url("http://localhost:9980/cursors/circle-blue.svg") 12.5 12.5, crosshair`,
                 menu: <>{attributesSystem.inputRender('weight')}</>,
             };
         },
@@ -41,6 +48,14 @@ declareModule(
                 return Registration.fromSubscription((registerAdditionalSubscription) =>
                     touchController.touches.subscribe((touch) => {
                         appState.cancelSelection();
+
+                        console.log('🎇 From module', { FreehandArt, TextArt });
+
+                        materialArtVersioningSystem
+                            .createPrimaryOperation()
+                            //.newArts(new TextArt('x', randomColor(), 50, false, false, false, 'none'))
+                            .newArts(new FreehandArt([touch.firstFrame], randomColor(), 10))
+                            .persist();
 
                         const artInProcess = new FreehandArt(
                             [],
