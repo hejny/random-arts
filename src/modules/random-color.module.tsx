@@ -1,10 +1,11 @@
 import {
-  declareModule,
-  FreehandArt,
-  makeIconModuleOnModule,
-  React,
-  TextArt,
-  ToolbarName
+    declareModule,
+    FreehandArt,
+    makeIconModuleOnModule,
+    React,
+    TextArt,
+    ToolbarName,
+    touchFrameToArtFrame,
 } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
 import { contributors, description, license, repository, version } from '../../package.json';
@@ -58,22 +59,26 @@ declareModule(
                             .newArts(new FreehandArt([touch.firstFrame], randomColor(), 10))
                             .persist();
 
-                        const artInProcess = new FreehandArt(
+                        const freehandInProcess = new FreehandArt(
                             [],
                             randomColor(),
                             attributesSystem.getAttributeValue('weight').value as number,
                         );
 
                         const operation = materialArtVersioningSystem.createPrimaryOperation();
-                        operation.newArts(artInProcess);
+                        operation.newArts(freehandInProcess);
 
                         registerAdditionalSubscription(
                             touch.frames.subscribe({
                                 // TODO: There should be some predetermined order which subscriber (freehand,move,...) to call first which second... and it should be determined by module priority NOT installation (subscription) order
                                 async next(touchFrame) {
-                                    touchFrame.position = (await collSpace.pickPoint(touchFrame.position)).point;
-                                    artInProcess.frames.push(touchFrame);
-                                    operation.update(artInProcess);
+                                    // TODO: [👘] Nicer syntax
+                                    const frame = touchFrameToArtFrame(touchFrame);
+                                    frame.position = collSpace.pickPoint(frame.position).point;
+
+                                    operation.update(
+                                        freehandInProcess.pushFrame(frame) /* <- TODO: Make pushFrame + use ACRY */,
+                                    );
                                 },
                                 complete() {
                                     operation.persist();
