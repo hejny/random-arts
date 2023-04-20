@@ -50,9 +50,6 @@ declareModule(
                     touchController.touches.subscribe((touch) => {
                         appState.cancelSelection();
 
-                        // tslint:disable-next-line:no-console
-                        console.log('🎇 From module', { FreehandArt, TextArt });
-
                         materialArtVersioningSystem
                             .createPrimaryOperation()
                             // .newArts(new TextArt('x', randomColor(), 50, false, false, false, 'none'))
