@@ -1,11 +1,9 @@
 import {
-    declareModule,
-    FreehandArt,
-    makeIconModuleOnModule,
-    React,
-    TextArt,
-    ToolbarName,
-    touchFrameToArtFrame,
+  declareModule,
+  FreehandArt,
+  makeIconModuleOnModule,
+  React, ToolbarName,
+  touchFrameToArtFrame
 } from '@collboard/modules-sdk';
 import { Registration } from 'destroyable';
 import { contributors, description, license, repository, version } from '../../package.json';
